@@ -12,8 +12,19 @@ public class Student {
         this.notebook = notebook;
     }
 
-    void startNote(String noteContent, int page) {
+    public void notebookPages(int pages) {
+        notebook.setPages(pages);
+    }
+
+    public void startNote(String noteContent, int page) {
         notebook.goToPage(page);
         notebook.writeNoteContent(noteContent);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "notebook=" + notebook +
+                '}';
     }
 }
