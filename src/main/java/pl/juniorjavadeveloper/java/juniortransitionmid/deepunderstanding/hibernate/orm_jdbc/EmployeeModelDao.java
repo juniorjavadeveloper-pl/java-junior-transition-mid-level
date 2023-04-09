@@ -7,8 +7,7 @@ import java.sql.SQLException;
 
 public class EmployeeModelDao {
 
-    private static final String DB_URL =
-            "jdbc:h2:~/h2database/hibernate-orm-jdbc-database";
+    private static final String DB_URL = "jdbc:h2:~/jdbc-database";
     private static final String INSERT_EMPLOYEE_SQL =
             "INSERT INTO EMPLOYEES(ID, FIRST_NAME, LAST_NAME, DEPARTMENT)" +
                     " VALUES(?, ?, ?, ?);";
