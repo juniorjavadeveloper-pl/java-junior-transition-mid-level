@@ -1,5 +1,7 @@
 package pl.juniorjavadeveloper.java.juniortransitionmid.deepunderstanding.hibernate.orm_jdbc;
 
+import pl.juniorjavadeveloper.java.juniortransitionmid.deepunderstanding.spring.value_properties.JdbcPropertiesHelper;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -14,7 +16,10 @@ public class EmployeeModelDao {
 
     public void create(EmployeeModel employeeModel) {
         // NOTE: Connection code must be moved to a separate class and reused!
-        try (Connection connection = DriverManager.getConnection(DB_URL, "sa", "");
+        try (Connection connection = DriverManager.getConnection(
+                JdbcPropertiesHelper.getProperty("jdbc.url"),
+                JdbcPropertiesHelper.getProperty("jdbc.username"),
+                JdbcPropertiesHelper.getProperty("jdbc.password"));
              PreparedStatement preparedStatement =
                      connection.prepareStatement(INSERT_EMPLOYEE_SQL)) {
 
