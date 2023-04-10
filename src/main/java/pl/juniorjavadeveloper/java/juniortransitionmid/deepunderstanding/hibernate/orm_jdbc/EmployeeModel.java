@@ -8,6 +8,16 @@ public class EmployeeModel {
 
     private String department;
 
+    public EmployeeModel() {
+    }
+
+    public EmployeeModel(Long id, String firstName, String lastName, String department) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.department = department;
+    }
+
     // getters/setters
 
     public Long getId() {
